@@ -136,7 +136,7 @@
    <li class="list">
     <a href="performance.html">
       <span class="icon"><ion-icon name="navigate-circle-outline"></ion-icon></span>
-      <span class="title">Performance</span>
+      <span class="title">Code Afspraken</span>
     </a>
   </li>
 
@@ -183,10 +183,57 @@
 
 <!-- Hier komt je tekst in-->
 <!-- Title H1 -->
-<h1>Performance Matters</h1>
+<h1>Code afspraken</h1>
 
 <!-- Broodtekst -->
-<p></p>
+<p>Tijdens deze sprint hebben we verschillende afspraken gemaakt over code & performance, lees er hieronder meer over.</p>
+
+<!-- code afspraken -->
+<h2>Code afspraken</h2>
+
+  <p>
+    We hebben in ons groepje tijdens deze opdracht van performance matter een aantal afspraken gemaakt over hoe we aan onze code werken.
+  </p>
+
+  <ul>
+    <li><b>Custom properties</b></li>
+  </ul>
+  <p>
+    We de afspraak gemaakt om gebruik te maken van custom properties. Zo hebben we als team geen kleurafwijkingen en zorgt iedereen ervoor dat ze gebruik maken van nette en gestructureerde code
+  </p>
+
+  <pre>
+    <code>
+      :root {
+        /* CUSTOM PROPERTIES */
+        /* Colours for specific allergies */
+        --walnoot-kleur: #cd9540;
+        --amandel-kleur: #f1c17e;
+        --cashewnoot-kleur: #e68460;
+        --ei-kleur: #f4eb34;
+        --vis-kleur: #daeeee;
+        --hazelnoot-kleur: #baddce;
+        --pinda-kleur: #72afa6;
+        --schelp-kleur: #f1c8ba;
+        --soja-kleur: #eae3d2;
+    
+        /* Primaire kleuren */
+        --donkerblauw: #152a45;
+        --wit: #ffffff;
+        --zwart: #121212;
+        --grijs: #888682;
+        --mini-nav-grijs: #a9a1a1;
+        --licht-grijs: #eaeaea;
+    
+        /* Font Family */
+        --body-font: "Montserrat";
+    }
+    </code>
+  </pre>
+  <ul>
+    <li><b>Class names</b></li>
+  </ul>
+  <p>We hebben met elkaar de afspraak gemaakt om gebruik te maken van logische class names. Hierdoor is het makkelijk om een ander zijn code te lezen.</p>
 
 <!-- Kop tekst -->
 <h2>Achtergrondinformatie over performance:</h2>
@@ -215,9 +262,27 @@
 
 <ul>
 
-  <li>Responsive images</li>
-  <li>Skeleton screen/loader</li>
-  <li>Lazy Load</li>
+  <li><b>Responsive images</b></li>
+
+    <pre>
+      <code>
+      &lt;picture&gt;
+        &lt;source srcset="&lt;%= data.product.plaatjes[0].smallAsWebP %&gt;" type="image/webp" /&gt;
+        &lt;source srcset="&lt;%= data.product.plaatjes[0].small %&gt;" type="image/jpeg" /&gt;
+        &lt;img src="&lt;%= data.product.plaatjes[0].small %&gt;" class="product-img" alt="Product titel afbeelding" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" width="80em" height="60em" /&gt;
+      &lt;/picture&gt;
+      </code>
+    </pre>
+    
+    <p>
+      In dit de code wordt aangegeven dat de afbeelding 100% van de viewport breedte inneemt als het schermformaat kleiner is dan 600 pixels, 50% van de viewport breedte bij een schermformaat tussen 600 en 1200 pixels, en 33% van de viewport breedte bij een schermformaat groter dan 1200 pixels.
+
+Met behulp van het &lt;picture&gt; element, srcset en sizes attributen wordt ervoor gezorgd dat de browser de meest geschikte afbeelding selecteert op basis van het beschikbare schermformaat en de grootte. Hierdoor wordt een optimale weergave en prestatie van de afbeeldingen bereikt op verschillende apparaten en schermformaten.
+    </p>
+
+ 
+  <li><b>Skeleton screen/loader</b></li>
+  <li><b>Lazy Load</b></li>
 
 </ul>
 

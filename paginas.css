@@ -305,6 +305,11 @@ margin-left: 45em;
  
 }
 
+code{
+  position: relative;
+  
+}
+
 @media only screen and (max-width: 1190px) { 
 
   .navigation{
